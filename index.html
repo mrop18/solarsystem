@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #akashganga {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+    .galaxy{
+        width: 100%;
+        height: 100vw;
+        /* background-color: black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .sun{
+        width: 100px;
+        height: 100px;
+        background-color: #ffe29d;
+        box-shadow: 0px 0px 500px 100px #ffcf60;
+        border-radius: 50%;
+        position: absolute;
+        
+    }
+    .planets{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        rotate: 1 0 0 60deg;
+
+    }
+    .mercury{
+        width: 160px;
+        height: 160px;
+        border: 1px solid white;
+        border-radius: 50%;
+        position: absolute;
+        animation: around 2.4s linear infinite;
+
+    }
+    .venus{
+        width: 254px;
+        height: 254px;
+        border: 1px solid white;
+        border-radius: 50%;
+        position: absolute;
+        animation: around 6.1s linear infinite;
+
+    }
+    .earth{
+        width: 358px;
+        height: 358px;
+        border: 1px solid white;
+        border-radius: 50%;
+        position: absolute;
+        animation: around 10s linear infinite;
+
+    }
+    .mars{
+        width: 462px;
+        height: 462px;
+        border: 1px solid white;
+        border-radius: 50%;
+        position: absolute;
+        animation: around 20s linear infinite;
+
+    }
+    .jupiter{
+        width: 636px;
+        height: 636px;
+        border: 1px solid white;
+        border-radius: 50%;
+        position: absolute;
+        animation: around 120s linear infinite;
+
+    }
+    .saturan{
+        width: 866px;
+        height: 866px;
+        border: 1px solid white;
+        border-radius: 50%;
+        position: absolute;
+        animation: around 290s linear infinite;
+
+    }
+    .uranus{
+        width: 1020px;
+        height: 1020px;
+        border: 1px solid white;
+        border-radius: 50%;
+        position: absolute;
+        animation: around 840s linear infinite;
+
+    }
+    .neptune{
+        width: 1124px;
+        height: 1124px;
+        border: 1px solid white;
+        border-radius: 50%;
+        position: absolute;
+        animation: around 1650s linear infinite;
+
+    }
+    
+    .pluto{
+        width: 1244px;
+        height: 1244px;
+        border: 1px solid white;
+        border-radius: 50%;
+        position: absolute;
+        animation: around 2480s linear infinite;
+
+    }
+    .pl-mer, .pl-ven, .pl-ear, .pl-mar, .pl-jup, .pl-sat, .pl-ura, .pl-nep, .pl-plu{
+        position: absolute;
+        /* top: 50%; */
+        /* align-items: center; */
+        border-radius: 50%;
+    }
+
+    .pl-mer{
+        width: 20px;
+        height: 20px;
+        background-image: url(./images/mer.jpg);
+        background-position: center;
+        background-size: 300%;
+        /* background-color: red; */
+        left: -10px;
+        top: 70px;
+    } 
+    .pl-ven{
+        width: 24px;
+        height: 24px;
+        background-image: url(./images/ven.jpg);
+        background-position: center;
+        background-size: 300%;
+        /* background-color: red; */
+        left: -12px;
+        top: 115px;
+    }
+    .pl-ear{
+        width: 30px;
+        height: 30px;
+        background-image: url(./images/ear.jpg);
+        background-position: center;
+        background-size: 150%;
+        /* background-color: red; */
+        left: -15px;
+        top: 164px;
+    }
+    .pl-mar{
+        width: 24px;
+        height: 24px;
+        background-image: url(./images/mar.jpg);
+        background-position: center;
+        background-size: 200%;
+        /* background-color: red; */
+        left: -12px;
+        top: 219px;
+    }
+    .pl-jup{
+        width: 100px;
+        height: 100px;
+        background-image: url(./images/jup.jpg);
+        background-position: center;
+        background-size: 200%;
+        /* background-color: red; */
+        left: -50px;
+        top: 268px;
+    }
+    .pl-sat{
+        width: 80px;
+        height: 80px;
+        background-image: url(./images/sat.jpg);
+        background-position: center;
+        background-size: 200%;
+        /* background-color: red; */
+        left: -40px;
+        top: 393px;
+    }
+    .pl-ura{
+        width: 24px;
+        height: 24px;
+        background-image: url(./images/ura.jpg);
+        background-position: center;
+        background-size: 300%;
+        /* background-color: red; */
+        left: -12px;
+        top: 498px;
+    }
+    .pl-nep{
+        width: 30px;
+        height: 30px;
+        background-image: url(./images/nep.jpg);
+        background-position: center;
+        background-size: 200%;
+        /* background-color: red; */
+        left: -15px;
+        top: 547px;
+    }
+    .pl-plu{
+        width: 40px;
+        height: 40px;
+        background-image: url(./images/plu.jpg);
+        background-position: center;
+        background-size: 300%;
+        /* background-color: red; */
+        left: -20px;
+        top: 602px;
+    }
+    .moon{
+        width: 50px;
+        height: 50px;
+        border: 1px solid white;
+        border-radius: 50%;
+        position: absolute;
+        top: 154px;
+        left: -25px;
+        animation: around .5s linear infinite;
+
+    }
+    .pl-moon{
+        width: 6px;
+        height: 6px;
+        background-color: white;
+        position: absolute;
+        border-radius: 50%;
+        box-shadow: 0px 0px 5px 1px #ffffff;
+        left: -3px;
+        top: 22px;
+
+    }
+    @keyframes around{
+        0% {
+            transform: rotate(360deg);
+        }
+    }
+    
+
+</style>
+<body>
+    <video autoplay muted loop id="akashganga">
+        <source src="./images/galaxy.mp4" type="video/mp4">
+      </video>
+    <div class="galaxy">
+        <div class="sun"></div>
+        <div class="planets">
+            <div class="mercury"><div class="pl-mer"></div></div>
+            <div class="venus"><div class="pl-ven"></div></div>
+            <div class="earth">
+                <div class="pl-ear"></div>
+                <div class="moon"><div class="pl-moon"></div></div>
+            </div>
+            <div class="mars"><div class="pl-mar"></div></div>
+            <div class="jupiter"><div class="pl-jup"></div></div>
+            <div class="saturan"><div class="pl-sat"></div></div>
+            <div class="uranus"><div class="pl-ura"></div></div>
+            <div class="neptune"><div class="pl-nep"></div></div>
+            <div class="pluto"><div class="pl-plu"></div></div>
+        </div>
+    </div>
+</body>
+</html>
